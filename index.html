@@ -11,7 +11,6 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     background: #f4f4f4;
-    color: #333;
 }
 
 /* TOPO */
@@ -22,16 +21,6 @@ header {
     padding: 40px 20px;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.4em;
-}
-
-header p {
-    margin-top: 10px;
-    font-size: 1.1em;
-}
-
 /* CONTAINER */
 .container {
     max-width: 1000px;
@@ -40,61 +29,27 @@ header p {
 }
 
 /* CATEGORIAS */
-.categoria {
-    margin: 30px 0;
-}
-
 .categoria h2 {
     background: linear-gradient(135deg, #ff0000, #ff4d4d);
     color: white;
     padding: 14px;
     border-radius: 12px;
-    font-size: 1.5em;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
 }
 
 /* PRODUTOS */
 .produto {
     background: white;
-    border-radius: 12px;
-    padding: 14px 18px;
-    margin: 10px 0;
-    font-size: 1.1em;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 10px;
     border-left: 6px solid #ccc;
 }
 
 /* PRIORIDADE */
 .urgente {
-    border-left: 6px solid #ff0000;
+    border-left: 6px solid red;
     background: #ffe5e5;
     font-weight: bold;
-}
-
-.medio {
-    border-left: 6px solid #ff9900;
-    background: #fff3e0;
-}
-
-.baixo {
-    border-left: 6px solid #28a745;
-    background: #e9f9ee;
-}
-
-/* LOGO */
-.logo {
-    display: block;
-    margin: 20px auto;
-    max-width: 200px;
-}
-
-/* RODAPÉ */
-footer {
-    text-align: center;
-    padding: 25px;
-    background: #cc0000;
-    color: white;
-    margin-top: 40px;
 }
 </style>
 </head>
@@ -102,58 +57,65 @@ footer {
 <body>
 
 <header>
-    <h1>🚨 LISTA DE FALTAS 🚨</h1>
-    <p>Controle de reposição • Atacadão Farma Centro</p>
+<h1>🚨 LISTA DE FALTAS 🚨</h1>
+<p>Atacadão Farma Centro</p>
 </header>
-
-<!-- TROCAR PELO NOME REAL DA SUA LOGO -->
-<img src="logo.png" class="logo">
 
 <div class="container">
 
-    <!-- DOR E FEBRE -->
-    <div class="categoria">
-        <h2>💊 DOR E FEBRE</h2>
+<!-- DOR E FEBRE -->
+<div class="categoria">
+<h2>💊 DOR E FEBRE</h2>
 
-        <div class="produto urgente">Dipirona gotas</div>
-        <div class="produto urgente">Dipirona xarope</div>
+<div class="produto urgente">Dipirona gotas</div>
+<div class="produto urgente">Dipirona xarope</div>
+<div class="produto urgente">Dipirona 500mg cartela</div>
+<div class="produto urgente">Paracetamol gotas</div>
+<div class="produto medio">Paracetamol baby</div>
+<div class="produto">Ibuprofeno gotas 50mg/ml</div>
+<div class="produto">Dorflex cartela</div>
+<div class="produto">Doralgina</div>
+<div class="produto">Meloxicam</div>
+<div class="produto">Ciclobenzaprina</div>
 
-        <div class="produto urgente">Pomada de Triancinolona Acetonida</div>
-        <div class="produto urgente">Pomada de Diclofenaco</div>
-        <div class="produto urgente">Diclofenaco comprimido</div>
+<div class="produto urgente">Pomada de Triancinolona Acetonida</div>
+<div class="produto urgente">Pomada de Diclofenaco</div>
+<div class="produto urgente">Diclofenaco comprimido</div>
 
-        <div class="produto urgente">Fluconazol</div>
-        <div class="produto urgente">Keltrina 5%</div>
-
-        <div class="produto medio">Paracetamol baby</div>
-        <div class="produto">Ibuprofeno gotas 50mg/ml</div>
-    </div>
-
-    <!-- GRIPE -->
-    <div class="categoria">
-        <h2>🤧 GRIPE E TOSSE</h2>
-
-        <div class="produto urgente">Neolefrin xarope</div>
-        <div class="produto urgente">Ambroxol infantil</div>
-        <div class="produto medio">Hedera helix</div>
-        <div class="produto">Vick / Neorub</div>
-    </div>
-
-    <!-- ALERGIA -->
-    <div class="categoria">
-        <h2>🌬️ ALERGIA E RESPIRATÓRIO</h2>
-
-        <div class="produto urgente">Histamin gotas</div>
-        <div class="produto medio">Loratadina</div>
-        <div class="produto">Desclorfeniramina</div>
-    </div>
+<div class="produto urgente">Fluconazol</div>
+<div class="produto urgente">Keltrina 5%</div>
 
 </div>
 
-<footer>
-    <p>📦 Atualize diariamente</p>
-    <p>❤️ Atacadão Farma Centro</p>
-</footer>
+<!-- GRIPE -->
+<div class="categoria">
+<h2>🤧 GRIPE E TOSSE</h2>
+
+<div class="produto urgente">Expectamin xarope</div>
+<div class="produto urgente">EMS Expector</div>
+<div class="produto urgente">Neolefrin xarope</div>
+<div class="produto">Descon xarope</div>
+<div class="produto">Xarope de guaco</div>
+<div class="produto medio">Hedera helix</div>
+<div class="produto urgente">Ambroxol infantil</div>
+<div class="produto urgente">Acetilcisteina infantil</div>
+<div class="produto urgente">Dropropizina infantil</div>
+<div class="produto">Vick / Neorub</div>
+
+</div>
+
+<!-- ALERGIA -->
+<div class="categoria">
+<h2>🌬️ ALERGIA E RESPIRATÓRIO</h2>
+
+<div class="produto urgente">Histamin gotas</div>
+<div class="produto urgente">Histamin comprimido</div>
+<div class="produto medio">Desclorfeniramina</div>
+<div class="produto medio">Loratadina (Alerodina)</div>
+
+</div>
+
+</div>
 
 </body>
 </html>
