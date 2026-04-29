@@ -1,121 +1,108 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Faltas - Atacadão Farma Centro</title>
-
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; background: #f8f9fa; color: #333; }
-        
-        header {
-            background: linear-gradient(135deg, #dc3545, #ff6b6b);
-            color: white;
-            text-align: center;
-            padding: 35px 20px;
-        }
-
-        h1 { margin: 0; font-size: 2.3em; }
-
-        .container {
-            max-width: 1000px;
-            margin: 20px auto;
-            padding: 0 15px;
-        }
-
-        .categoria {
-            margin: 30px 0 15px;
-        }
-
-        .categoria h2 {
-            background: #dc3545;
-            color: white;
-            padding: 12px;
-            border-radius: 10px;
-            font-size: 1.5em;
-        }
-
-        .produto {
-            background: white;
-            border: 1px solid #ddd;
-            border-left: 6px solid #dc3545;
-            border-radius: 10px;
-            padding: 14px 16px;
-            margin: 10px 0;
-            font-size: 1.1em;
-        }
-
-        .urgente {
-            background: #ffe6e6;
-            border-left: 6px solid #ff0000;
-            font-weight: bold;
-        }
-
-        .ok {
-            background: #e6ffe6;
-            border-left: 6px solid #28a745;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #222;
-            color: white;
-            margin-top: 40px;
-        }
-    </style>
-</head>
-
-<body>
-
-<header>
-    <h1>🚨 LISTA DE FALTAS 🚨</h1>
-    <p>Controle interno de reposição de estoque</p>
-</header>
-
 <div class="container">
 
-    <!-- MEDICAMENTOS -->
+    <!-- DOR / FEBRE -->
     <div class="categoria">
-        <h2>💊 MEDICAMENTOS</h2>
+        <h2>💊 DOR E FEBRE</h2>
 
-        <div class="produto urgente">Dipirona 1g</div>
-        <div class="produto urgente">Losartana</div>
-        <div class="produto">Loratadina</div>
-        <div class="produto">Simeticona</div>
+        <div class="produto urgente">Dipirona gotas</div>
+        <div class="produto urgente">Dipirona xarope</div>
+        <div class="produto urgente">Dipirona 500mg cartela</div>
+        <div class="produto urgente">Paracetamol gotas</div>
+        <div class="produto urgente">Paracetamol baby</div>
+        <div class="produto urgente">Ibuprofeno gotas</div>
+        <div class="produto urgente">Dorflex cartela</div>
+        <div class="produto urgente">Doralgina</div>
+        <div class="produto">Meloxicam</div>
+        <div class="produto">Ciclobenzaprina</div>
     </div>
 
-    <!-- HIGIENE -->
+    <!-- GRIPE / TOSSE -->
     <div class="categoria">
-        <h2>🧴 HIGIENE</h2>
+        <h2>🤧 GRIPE E TOSSE</h2>
 
-        <div class="produto urgente">Colgate</div>
-        <div class="produto">Listerine</div>
-        <div class="produto urgente">Carmed</div>
+        <div class="produto urgente">Expectamin xarope</div>
+        <div class="produto urgente">EMS Expector</div>
+        <div class="produto urgente">Neolefrin xarope</div>
+        <div class="produto urgente">Descon xarope</div>
+        <div class="produto urgente">Xarope de guaco</div>
+        <div class="produto urgente">Hedera helix</div>
+        <div class="produto urgente">Ambroxol infantil</div>
+        <div class="produto urgente">Acetilcisteína infantil</div>
+        <div class="produto urgente">Dropropizina infantil</div>
+        <div class="produto urgente">Vick / Neorub</div>
     </div>
 
-    <!-- INFANTIL -->
+    <!-- ALERGIA / RESPIRATÓRIO -->
     <div class="categoria">
-        <h2>👶 INFANTIL</h2>
+        <h2>🌬️ ALERGIA E RESPIRATÓRIO</h2>
 
-        <div class="produto urgente">Lenço umedecido</div>
-        <div class="produto">Cotonete</div>
+        <div class="produto urgente">Histamin gotas</div>
+        <div class="produto urgente">Histamin comprimido</div>
+        <div class="produto urgente">Desclorfeniramina</div>
+        <div class="produto urgente">Loratadina (Aerodina)</div>
+        <div class="produto urgente">Budesonida 32mcg</div>
+        <div class="produto urgente">Naridrin</div>
     </div>
 
-    <!-- SUPLEMENTOS -->
+    <!-- CORTICOIDES -->
     <div class="categoria">
-        <h2>🍊 SUPLEMENTOS</h2>
+        <h2>💊 CORTICOIDES</h2>
 
-        <div class="produto urgente">Vitamina C</div>
-        <div class="produto">Magnésio</div>
+        <div class="produto urgente">Prednisona 40mg</div>
+        <div class="produto urgente">Prednisolona líquida</div>
+        <div class="produto urgente">Dexametasona comprimido</div>
+        <div class="produto urgente">Dexametasona elixir</div>
+        <div class="produto urgente">Betametasona</div>
+        <div class="produto urgente">Betametasona pomada</div>
+        <div class="produto urgente">Mometasona pomada</div>
+    </div>
+
+    <!-- GASTRO / INTESTINAL -->
+    <div class="categoria">
+        <h2>🦠 GASTRO / INTESTINAL</h2>
+
+        <div class="produto urgente">Simeticona gotas</div>
+        <div class="produto urgente">Bromoprida gotas</div>
+        <div class="produto urgente">Bromoprida comprimido</div>
+        <div class="produto urgente">Domperidona comprimido</div>
+        <div class="produto urgente">Plasil comprimido</div>
+        <div class="produto urgente">Lactulose</div>
+        <div class="produto urgente">Rapilax</div>
+        <div class="produto urgente">Flora intestinal (Leiba, Florastor)</div>
+    </div>
+
+    <!-- VERMES / INFECÇÃO -->
+    <div class="categoria">
+        <h2>🧪 VERMES E INFECÇÕES</h2>
+
+        <div class="produto urgente">Albendazol comprimido</div>
+        <div class="produto urgente">Albendazol líquido</div>
+        <div class="produto urgente">Secnidazol</div>
+        <div class="produto urgente">Nitazoxanida</div>
+        <div class="produto urgente">Ivermectina</div>
+    </div>
+
+    <!-- OUTROS -->
+    <div class="categoria">
+        <h2>💊 OUTROS</h2>
+
+        <div class="produto urgente">Furosemida</div>
+        <div class="produto urgente">Ciclo 21</div>
+        <div class="produto urgente">Microvlar</div>
+        <div class="produto urgente">Levotiroxina 50mcg</div>
+        <div class="produto urgente">Levotiroxina 75mcg</div>
+        <div class="produto urgente">Levotiroxina 88mcg</div>
+        <div class="produto urgente">Naratriptano</div>
+        <div class="produto urgente">Enxak</div>
+        <div class="produto urgente">Colírio carmelose</div>
+    </div>
+
+    <!-- INFANTIL / VITAMINAS -->
+    <div class="categoria">
+        <h2>👶 INFANTIL E VITAMINAS</h2>
+
+        <div class="produto urgente">Vitamina D gotas</div>
+        <div class="produto urgente">Vitamina C gotas</div>
     </div>
 
 </div>
-
-<footer>
-    <p>📦 Atualize diariamente</p>
-    <p>💊 Atacadão Farma Centro</p>
-</footer>
-
-</body>
-</html>
