@@ -8,11 +8,10 @@
 <style>
 body { font-family: Arial; background:#f4f4f4; margin:0; }
 header { background:linear-gradient(135deg,#cc0000,#ff1a1a); color:#fff; text-align:center; padding:20px; }
+
 .container { max-width:1000px; margin:20px auto; padding:0 15px; }
 
-.categoria {
-  margin:25px 0;
-}
+.categoria { margin:25px 0; }
 
 .categoria h2 {
   background:#ff4d4d;
@@ -38,32 +37,18 @@ button {
   padding:6px 10px;
   border-radius:5px;
   cursor:pointer;
-  margin-left:5px;
 }
-
-button.remover { background:#dc3545; }
-
-input {
-  padding:10px;
-  width:70%;
-  margin-right:10px;
-}
-
-
 </style>
 </head>
 
 <body>
+
 <header>
 <h2>📦 Controle de Faltas - Atacadão Farma Centro</h2>
 </header>
 
 <div class="container">
-
-
-
 <div id="lista"></div>
-
 </div>
 
 <script>
@@ -82,11 +67,11 @@ let categorias = {
 "Histamin gotas","Histamin comprimido","Desclorfeniramina","Loratadina (Alerodina)","Desloratadina líquida"
 ],
 
-"🦠 Antibióticos / Infecções": [
+"🦠 Infecções": [
 "Fluconazol","Secnidazol","Albendazol líquido","Albendazol 1 comprimido","Albendazol 3 comprimidos"
 ],
 
-"🧠 Sistema Digestivo": [
+"🧠 Digestivo": [
 "Lactulose","Hidróxido de alumínio","Domperidona","Bromoprida gotas","Bromoprida comprimido","Imosec","Kaosec"
 ],
 
@@ -102,11 +87,11 @@ let categorias = {
 "Levotiroxina 25 mcg","Levotiroxina 50 mcg","Levotiroxina 75 mcg","Levotiroxina 100 mcg"
 ],
 
-"🧴 Vitaminas e Suplementos": [
+"🧴 Vitaminas": [
 "Vitamina D 50.000 UI","Ácido fólico","Sulfato ferroso comprimido","Passiflora","Silimarina"
 ],
 
-"👁️ Oftálmicos e Nasal": [
+"👁️ Oftálmico/Nasal": [
 "Colírio de carmelose","Naridrin 12 horas","Budesonida 32 mcg"
 ],
 
@@ -117,6 +102,7 @@ let categorias = {
 "🩺 Materiais": [
 "Seringas 3 ml","Seringas 5 ml"
 ]
+
 };
 
 function render() {
@@ -124,26 +110,23 @@ function render() {
   lista.innerHTML = "";
 
   Object.keys(categorias).forEach(cat => {
+
     lista.innerHTML += `<div class="categoria"><h2>${cat}</h2></div>`;
 
     categorias[cat].forEach((item, index) => {
       lista.innerHTML += `
       <div class="produto">
         ${item}
-        <div>
-          <button onclick="removerItem('${cat}', ${index})">Deu entrada</button>
-        </div>
+        <button onclick="removerItem('${cat}', ${index})">Deu entrada</button>
       </div>`;
     });
+
   });
 }
 
 function removerItem(cat, index) {
   categorias[cat].splice(index, 1);
   render();
-}
-
-
 }
 
 render();
