@@ -49,10 +49,7 @@ input {
   margin-right:10px;
 }
 
-.add-box {
-  display:flex;
-  margin-bottom:20px;
-}
+
 </style>
 </head>
 
@@ -63,10 +60,7 @@ input {
 
 <div class="container">
 
-<div class="add-box">
-<input type="text" id="novoProduto" placeholder="Adicionar novo produto...">
-<button onclick="addProduto()">Adicionar</button>
-</div>
+
 
 <div id="lista"></div>
 
@@ -149,13 +143,7 @@ function removerItem(cat, index) {
   render();
 }
 
-function addProduto() {
-  const input = document.getElementById("novoProduto");
-  if(input.value.trim() !== ""){
-    categorias["💊 Dor e Febre"].push(input.value);
-    input.value = "";
-    render();
-  }
+
 }
 
 render();
