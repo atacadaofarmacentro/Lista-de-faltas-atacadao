@@ -3,154 +3,174 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Lista de Faltas - Atacadão Farma Centro</title>
+<title>Controle de Faltas - Atacadão Farma Centro</title>
 
 <style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f4f4f4;
-}
+body { font-family: Arial; background:#f4f4f4; margin:0; }
+header { background:linear-gradient(135deg,#cc0000,#ff1a1a); color:#fff; text-align:center; padding:20px; }
+.container { max-width:1000px; margin:20px auto; padding:0 15px; }
 
-/* TOPO */
-header {
-    background: linear-gradient(135deg, #cc0000, #ff1a1a);
-    color: white;
-    text-align: center;
-    padding: 40px 20px;
-}
-
-/* CONTAINER */
-.container {
-    max-width: 1000px;
-    margin: 20px auto;
-    padding: 0 15px;
-}
-
-/* CATEGORIAS */
-.categoria {
-    margin: 30px 0;
-}
-
-.categoria h2 {
-    background: linear-gradient(135deg, #ff0000, #ff4d4d);
-    color: white;
-    padding: 14px;
-    border-radius: 12px;
-}
-
-/* PRODUTOS */
 .produto {
-    background: white;
-    padding: 12px;
-    margin: 8px 0;
-    border-radius: 10px;
-    border-left: 6px solid #ccc;
+  background:#fff;
+  padding:12px;
+  margin:8px 0;
+  border-radius:8px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-/* PRIORIDADE */
-.urgente {
-    border-left: 6px solid red;
-    background: #ffe5e5;
-    font-weight: bold;
+button {
+  background:#28a745;
+  color:white;
+  border:none;
+  padding:6px 10px;
+  border-radius:5px;
+  cursor:pointer;
+  margin-left:5px;
 }
 
-.medio {
-    border-left: 6px solid orange;
-    background: #fff3e0;
+button.remover { background:#dc3545; }
+
+input {
+  padding:10px;
+  width:70%;
+  margin-right:10px;
+}
+
+.add-box {
+  display:flex;
+  margin-bottom:20px;
 }
 </style>
 </head>
 
 <body>
-
 <header>
-<h1>🚨 LISTA DE FALTAS 🚨</h1>
-<p>Atacadão Farma Centro</p>
+<h2>📦 Controle de Faltas - Atacadão Farma Centro</h2>
 </header>
 
 <div class="container">
 
-<!-- DOR E FEBRE -->
-<div class="categoria">
-<h2>💊 DOR E FEBRE</h2>
+<div class="add-box">
+<input type="text" id="novoProduto" placeholder="Adicionar novo produto...">
+<button onclick="addProduto()">Adicionar</button>
+</div>
 
-<div class="produto urgente">Dipirona gotas</div>
-<div class="produto urgente">Dipirona xarope</div>
-<div class="produto urgente">Dipirona 500mg cartela</div>
-<div class="produto urgente">Paracetamol gotas</div>
-<div class="produto medio">Paracetamol baby</div>
-<div class="produto">Ibuprofeno gotas 50mg/ml</div>
-<div class="produto">Dorflex cartela</div>
-<div class="produto">Doralgina</div>
-<div class="produto">Meloxicam</div>
-<div class="produto">Ciclobenzaprina</div>
-
-<div class="produto urgente">Pomada de Triancinolona Acetonida</div>
-<div class="produto urgente">Pomada de Diclofenaco</div>
-<div class="produto urgente">Diclofenaco comprimido</div>
-
-<div class="produto urgente">Fluconazol</div>
-<div class="produto urgente">Keltrina 5%</div>
+<div id="lista"></div>
 
 </div>
 
-<!-- GRIPE -->
-<div class="categoria">
-<h2>🤧 GRIPE E TOSSE</h2>
+<script>
+let produtos = [
+"Dipirona gotas",
+"Naridrin 12 horas",
+"Albendazol líquido",
+"Albendazol 1 comprimido",
+"Albendazol 3 comprimidos",
+"Repoflor",
+"Diclofenaco comprimido",
+"Vitamina D 50.000 UI",
+"Ácido fólico",
+"Sulfato ferroso comprimido",
+"Passiflora",
+"Silimarina",
+"Colírio de carmelose",
+"Clopidogrel",
+"Paracetamol gotas",
+"Dipirona xarope",
+"Bromoprida gotas",
+"Bromoprida comprimido",
+"Triancinolona + acetonida pomada",
+"Hidróxido de alumínio",
+"Domperidona",
+"Desloratadina líquida",
+"Prednisolona líquida",
+"Prednisona 40 mg",
+"Budesonida 32 mcg",
+"Neolefrin xarope",
+"Imosec",
+"Kaosec",
+"Secnidazol",
 
-<div class="produto urgente">Expectamin xarope</div>
-<div class="produto urgente">EMS Expector</div>
-<div class="produto urgente">Neolefrin xarope</div>
-<div class="produto">Descon xarope</div>
-<div class="produto">Xarope de guaco</div>
-<div class="produto medio">Hedera helix</div>
-<div class="produto urgente">Ambroxol infantil</div>
-<div class="produto urgente">Acetilcisteina infantil</div>
-<div class="produto urgente">Dropropizina infantil</div>
-<div class="produto">Vick / Neorub</div>
+"Dipirona 500mg cartela",
+"Paracetamol baby",
+"Ibuprofeno gotas 50mg/ml",
+"Dorflex cartela",
+"Doralgina",
+"Meloxicam",
+"Ciclobenzaprina 10 mg (15 comprimidos)",
+"Ciclobenzaprina 10 mg (30 comprimidos)",
+"Pomada de Diclofenaco",
+"Fluconazol",
+"Keltrina 5%",
 
-</div>
+"Expectamin xarope",
+"EMS Expector",
+"Descon xarope",
+"Xarope de guaco",
+"Hedera helix",
+"Ambroxol infantil",
+"Acetilcisteína infantil",
+"Dropropizina infantil",
+"Vick / Neorub",
 
-<!-- ALERGIA -->
-<div class="categoria">
-<h2>🌬️ ALERGIA E RESPIRATÓRIO</h2>
+"Histamin gotas",
+"Histamin comprimido",
+"Desclorfeniramina",
+"Loratadina (Alerodina)",
 
-<div class="produto urgente">Histamin gotas</div>
-<div class="produto urgente">Histamin comprimido</div>
-<div class="produto medio">Desclorfeniramina</div>
-<div class="produto medio">Loratadina (Alerodina)</div>
+"Metoprolol 50 mg",
+"Metformina 500 mg",
+"Metformina 850 mg",
+"Lactulose",
 
-</div>
+"Levotiroxina 25 mcg",
+"Levotiroxina 50 mcg",
+"Levotiroxina 75 mcg",
+"Levotiroxina 100 mcg",
 
-<!-- CARDIOVASCULAR -->
-<div class="categoria">
-<h2>💓 CARDIOVASCULAR</h2>
+"Seringas 3 ml",
+"Seringas 5 ml"
+];
 
-<div class="produto urgente">Metoprolol 50 mg</div>
+function render() {
+  const lista = document.getElementById("lista");
+  lista.innerHTML = "";
 
-</div>
+  produtos.forEach((item, index) => {
+    lista.innerHTML += `
+    <div class="produto">
+      ${item}
+      <div>
+        <button onclick="darBaixa(${index})">Deu entrada</button>
+        <button class="remover" onclick="remover(${index})">X</button>
+      </div>
+    </div>`;
+  });
+}
 
-<!-- DIABETES -->
-<div class="categoria">
-<h2>🍬 DIABETES</h2>
+function darBaixa(index) {
+  produtos.splice(index, 1);
+  render();
+}
 
-<div class="produto urgente">Metformina 500 mg</div>
-<div class="produto urgente">Metformina 850 mg</div>
+function remover(index) {
+  produtos.splice(index, 1);
+  render();
+}
 
-</div>
+function addProduto() {
+  const input = document.getElementById("novoProduto");
+  if(input.value.trim() !== ""){
+    produtos.push(input.value);
+    input.value = "";
+    render();
+  }
+}
 
-<!-- MATERIAIS -->
-<div class="categoria">
-<h2>🩺 MATERIAIS</h2>
-
-<div class="produto urgente">Seringas 3 ml</div>
-<div class="produto urgente">Seringas 5 ml</div>
-
-</div>
-
-</div>
+render();
+</script>
 
 </body>
 </html>
