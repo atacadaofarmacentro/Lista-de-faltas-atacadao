@@ -6,45 +6,56 @@
 <title>Controle de Faltas - Atacadão Farma Centro</title>
 
 <style>
-body { font-family: Arial; background:#f4f4f4; margin:0; }
-header { background:linear-gradient(135deg,#cc0000,#ff1a1a); color:#fff; text-align:center; padding:20px; }
 
-.container { max-width:1000px; margin:20px auto; padding:0 15px; }
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f4f4;
+  margin:0;
+}
 
-.categoria { margin:25px 0; }
+header{
+  background:linear-gradient(135deg,#cc0000,#ff1a1a);
+  color:#fff;
+  text-align:center;
+  padding:25px;
+  font-size:22px;
+  font-weight:bold;
+}
 
-.categoria h2 {
+.container{
+  max-width:1000px;
+  margin:20px auto;
+  padding:0 15px;
+}
+
+.categoria{
+  margin:25px 0;
+}
+
+.categoria h2{
   background:#ff4d4d;
   color:white;
-  padding:10px;
-  border-radius:8px;
+  padding:12px;
+  border-radius:10px;
+  font-size:28px;
 }
 
-.produto {
+.produto{
   background:#fff;
-  padding:12px;
+  padding:15px;
   margin:8px 0;
   border-radius:8px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+  font-size:22px;
+  box-shadow:0 2px 4px rgba(0,0,0,0.1);
 }
 
-button {
-  background:#28a745;
-  color:white;
-  border:none;
-  padding:6px 10px;
-  border-radius:5px;
-  cursor:pointer;
-}
 </style>
 </head>
 
 <body>
 
 <header>
-<h2>📦 Controle de Faltas - Atacadão Farma Centro</h2>
+📦 Controle de Faltas - Atacadão Farma Centro
 </header>
 
 <div class="container">
@@ -56,77 +67,129 @@ button {
 let categorias = {
 
 "💊 Dor e Febre": [
-"Dipirona gotas","Dipirona xarope","Dipirona 500mg cartela","Paracetamol gotas","Paracetamol baby","Ibuprofeno gotas 50mg/ml","Dorflex cartela","Doralgina","Meloxicam","Ciclobenzaprina 10 mg (15 comprimidos)","Ciclobenzaprina 10 mg (30 comprimidos)","Diclofenaco comprimido","Pomada de Diclofenaco"
+"Dipirona gotas",
+"Dipirona xarope",
+"Dipirona 500mg cartela",
+"Paracetamol gotas",
+"Paracetamol baby",
+"Ibuprofeno gotas 50mg/ml",
+"Dorflex cartela",
+"Doralgina",
+"Meloxicam",
+"Ciclobenzaprina 10 mg (15 comprimidos)",
+"Ciclobenzaprina 10 mg (30 comprimidos)",
+"Diclofenaco comprimido",
+"Pomada de Diclofenaco"
 ],
 
 "🤧 Gripe e Tosse": [
-"Neolefrin xarope","Expectamin xarope","EMS Expector","Descon xarope","Xarope de guaco","Hedera helix","Ambroxol infantil","Acetilcisteína infantil","Dropropizina infantil","Vick / Neorub"
+"Neolefrin xarope",
+"Expectamin xarope",
+"EMS Expector",
+"Descon xarope",
+"Xarope de guaco",
+"Hedera helix",
+"Ambroxol infantil",
+"Acetilcisteína infantil",
+"Dropropizina infantil",
+"Vick / Neorub"
 ],
 
 "🌬️ Alergia": [
-"Histamin gotas","Histamin comprimido","Desclorfeniramina","Loratadina (Alerodina)","Desloratadina líquida"
+"Histamin gotas",
+"Histamin comprimido",
+"Desclorfeniramina",
+"Loratadina (Alerodina)",
+"Desloratadina líquida"
 ],
 
 "🦠 Infecções": [
-"Fluconazol","Secnidazol","Albendazol líquido","Albendazol 1 comprimido","Albendazol 3 comprimidos"
+"Fluconazol",
+"Secnidazol",
+"Albendazol líquido",
+"Albendazol 1 comprimido",
+"Albendazol 3 comprimidos"
 ],
 
 "🧠 Digestivo": [
-"Lactulose","Hidróxido de alumínio","Domperidona","Bromoprida gotas","Bromoprida comprimido","Imosec","Kaosec"
+"Lactulose",
+"Hidróxido de alumínio",
+"Domperidona",
+"Bromoprida gotas",
+"Bromoprida comprimido",
+"Imosec",
+"Kaosec"
 ],
 
 "💓 Cardiovascular": [
-"Metoprolol 50 mg","Clopidogrel"
+"Metoprolol 50 mg",
+"Clopidogrel"
 ],
 
 "🍬 Diabetes": [
-"Metformina 500 mg","Metformina 850 mg"
+"Metformina 500 mg",
+"Metformina 850 mg"
 ],
 
 "🧬 Hormônios": [
-"Levotiroxina 25 mcg","Levotiroxina 50 mcg","Levotiroxina 75 mcg","Levotiroxina 100 mcg"
+"Levotiroxina 25 mcg",
+"Levotiroxina 50 mcg",
+"Levotiroxina 75 mcg",
+"Levotiroxina 100 mcg",
+"Dienogest 2 mg"
 ],
 
 "🧴 Vitaminas": [
-"Vitamina D 50.000 UI","Ácido fólico","Sulfato ferroso comprimido","Passiflora","Silimarina"
+"Vitamina D 50.000 UI",
+"Ácido fólico",
+"Sulfato ferroso comprimido",
+"Passiflora",
+"Silimarina"
 ],
 
 "👁️ Oftálmico/Nasal": [
-"Colírio de carmelose","Naridrin 12 horas","Budesonida 32 mcg"
+"Colírio de carmelose",
+"Naridrin 12 horas",
+"Budesonida 32 mcg"
 ],
 
 "🧴 Dermatológicos": [
-"Triancinolona + acetonida pomada","Keltrina 5%"
+"Triancinolona + acetonida pomada",
+"Keltrina 5%"
 ],
 
 "🩺 Materiais": [
-"Seringas 3 ml","Seringas 5 ml"
+"Seringas 3 ml",
+"Seringas 5 ml"
 ]
 
 };
 
 function render() {
+
   const lista = document.getElementById("lista");
   lista.innerHTML = "";
 
   Object.keys(categorias).forEach(cat => {
 
-    lista.innerHTML += `<div class="categoria"><h2>${cat}</h2></div>`;
+    lista.innerHTML += `
+      <div class="categoria">
+        <h2>${cat}</h2>
+      </div>
+    `;
 
-    categorias[cat].forEach((item, index) => {
+    categorias[cat].forEach(item => {
+
       lista.innerHTML += `
-      <div class="produto">
-        ${item}
-        <button onclick="removerItem('${cat}', ${index})">Deu entrada</button>
-      </div>`;
+        <div class="produto">
+          ${item}
+        </div>
+      `;
+
     });
 
   });
-}
 
-function removerItem(cat, index) {
-  categorias[cat].splice(index, 1);
-  render();
 }
 
 render();
